@@ -47,6 +47,8 @@ func main() {
 		cfg.CharacterSet = "default"
 	}
 
+	// TODO: Add gif and video support
+
 	converter := ascii.NewConverter()
 	if err := converter.ConvertToASCII(cfg); err != nil {
 		fmt.Printf("Error: %v\n", err)
