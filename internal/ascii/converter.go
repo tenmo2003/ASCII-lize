@@ -34,7 +34,6 @@ func (c *Converter) ConvertToASCII(cfg *config.Config) error {
 
 	scaleConfig := image.ScaleConfig{
 		TargetWidth:      cfg.TargetedWidth,
-		PreserveAspect:   true,
 		AspectCorrection: WIDTH_TO_HEIGHT_ASPECT_CORRECTION,
 	}
 

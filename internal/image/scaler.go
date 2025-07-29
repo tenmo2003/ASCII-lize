@@ -2,7 +2,6 @@ package image
 
 type ScaleConfig struct {
 	TargetWidth      int
-	PreserveAspect   bool
 	AspectCorrection float64
 }
 
@@ -17,14 +16,9 @@ func (s *Scaler) CalculateScaling(width, height int, config ScaleConfig) (int, i
 	widthScaleRate := width / targetWidth
 
 	var targetHeight, heightScaleRate int
-	if config.PreserveAspect {
-		aspectRatio := float64(height) / float64(width)
-		targetHeight = int(float64(targetWidth) * aspectRatio * config.AspectCorrection)
-		heightScaleRate = height / targetHeight
-	} else {
-		targetHeight = height / widthScaleRate
-		heightScaleRate = widthScaleRate
-	}
+	aspectRatio := float64(height) / float64(width)
+	targetHeight = int(float64(targetWidth) * aspectRatio * config.AspectCorrection)
+	heightScaleRate = height / targetHeight
 
 	return widthScaleRate, heightScaleRate
 }
