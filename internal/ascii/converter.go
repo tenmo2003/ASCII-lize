@@ -5,6 +5,7 @@ import (
 	"ascii-lize/internal/image"
 	"fmt"
 	"os"
+	"strings"
 )
 
 const (
@@ -46,6 +47,8 @@ func (c *Converter) ConvertToASCII(cfg *config.Config) error {
 
 func (c *Converter) outputASCII(grayScale [][]int, cfg *config.Config) error {
 	characterSet := GetCharacterSet(cfg.CharacterSet)
+
+	characterSet = characterSet + strings.Repeat(" ", cfg.SpaceDensity)
 
 	currentDir, err := os.Getwd()
 	if err != nil {

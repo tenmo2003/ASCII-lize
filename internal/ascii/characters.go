@@ -1,20 +1,14 @@
 package ascii
 
 const (
-	DefaultCharacterSet = "8@$e*+!:.  "
+	DefaultCharacterSet = "8@$e*+!:."
 
-	DetailedCharacterSet = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
-
-	MinimalCharacterSet = "█▓▒░ "
-
-	BlockCharacterSet = "██▇▆▅▄▃▂▁ "
+	DetailedCharacterSet = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'."
 )
 
 var CharacterSetMap = map[string]string{
 	"default":  DefaultCharacterSet,
 	"detailed": DetailedCharacterSet,
-	"minimal":  MinimalCharacterSet,
-	"blocks":   BlockCharacterSet,
 }
 
 func GetCharacterSet(name string) string {

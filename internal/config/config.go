@@ -11,6 +11,7 @@ type Config struct {
 	TargetedWidth int
 	WriteToFile   bool
 	CharacterSet  string
+	SpaceDensity  int
 }
 
 type OutputConfig struct {
@@ -24,6 +25,7 @@ func NewConfig() *Config {
 		OutputPath:    "",
 		WriteToFile:   true,
 		CharacterSet:  "default",
+		SpaceDensity:  1,
 	}
 }
 

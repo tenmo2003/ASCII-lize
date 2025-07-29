@@ -13,6 +13,7 @@ func main() {
 	targetedWidth := flag.Int("targeted-width", 100, "The width of the output that the program will try to fit the image in by characters")
 	outputFileName := flag.String("output", "", "Name of the file the program will write the output to")
 	characterSet := flag.String("charset", "default", fmt.Sprintf("Character set to use (%s)", strings.Join(ascii.GetAvailableCharacterSets(), ", ")))
+	spaceDensity := flag.Int("space-density", 1, "Space density (default to 1)")
 	showHelp := flag.Bool("help", false, "Show help information")
 
 	flag.Parse()
@@ -34,6 +35,7 @@ func main() {
 	cfg.TargetedWidth = *targetedWidth
 	cfg.OutputPath = *outputFileName
 	cfg.CharacterSet = *characterSet
+	cfg.SpaceDensity = *spaceDensity
 
 	if err := cfg.Validate(); err != nil {
 		fmt.Printf("Configuration error: %v\n", err)
