@@ -6,7 +6,7 @@ import (
 )
 
 type Config struct {
-	ImagePath     string
+	MediaPath     string
 	OutputPath    string
 	TargetedWidth int
 	WriteToFile   bool
@@ -30,7 +30,7 @@ func NewConfig() *Config {
 }
 
 func (c *Config) Validate() error {
-	if c.ImagePath == "" {
+	if c.MediaPath == "" {
 		return errors.New("image path is required")
 	}
 

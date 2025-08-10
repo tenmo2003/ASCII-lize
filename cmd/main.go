@@ -31,7 +31,7 @@ func main() {
 	}
 
 	cfg := config.NewConfig()
-	cfg.ImagePath = args[0]
+	cfg.MediaPath = args[0]
 	cfg.TargetedWidth = *targetedWidth
 	cfg.OutputPath = *outputFileName
 	cfg.CharacterSet = *characterSet

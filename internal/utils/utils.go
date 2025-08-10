@@ -2,21 +2,22 @@ package utils
 
 import (
 	"image"
+	_ "image/gif"
 	_ "image/jpeg"
 	_ "image/png"
 	"os"
 	"strings"
 )
 
-func GetImageFromFilePath(filePath string) (image.Image, error) {
+func LoadMediaFromFilePath(filePath string) (image.Image, string, error) {
 	filePath = ExpandPath(filePath)
 	f, err := os.Open(filePath)
 	if err != nil {
-		return nil, err
+		return nil, "", err
 	}
 	defer f.Close()
-	image, _, err := image.Decode(f)
-	return image, err
+	image, format, err := image.Decode(f)
+	return image, format, err
 }
 
 func ExpandPath(filePath string) string {

@@ -1,8 +1,14 @@
 package image
 
 import (
-	"ascii-lize/internal/utils"
 	"image"
+)
+
+type MediaType int
+
+const (
+	IMAGE MediaType = iota
+	GIF
 )
 
 const (
@@ -13,10 +19,6 @@ type Processor struct{}
 
 func NewProcessor() *Processor {
 	return &Processor{}
-}
-
-func (p *Processor) LoadImage(path string) (image.Image, error) {
-	return utils.GetImageFromFilePath(path)
 }
 
 func (p *Processor) ConvertToGrayscale(img image.Image) [][]int {
