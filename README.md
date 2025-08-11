@@ -32,4 +32,3 @@ Examples:
 ## TODO
 
 - [x] Add gif support
-- [ ] Add video support
